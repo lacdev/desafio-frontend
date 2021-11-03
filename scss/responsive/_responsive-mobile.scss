@@ -1,0 +1,76 @@
+//Media queries German
+@media (max-width: 750px) {
+  .form-container {
+    display: none;
+  }
+
+  .banner-title {
+    font-size: 1rem;
+  }
+
+  .banner-secondary-content {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .call-to-action-banner {
+    padding: 10px 10px;
+
+    .call-to-action-link {
+      text-decoration: none;
+      color: black;
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .search-icon-container {
+    display: none;
+  }
+  .hamburguer-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 990px) {
+  .create-post-button {
+    display: none;
+  }
+}
+
+//Media queries Brisah
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .leftbar{
+    display: none;
+  }
+  
+}
+//Media queries Daniel
+
+@media (min-width:320px) and (max-width:754px) {
+    .profile {
+        padding: 0 20px;
+    }
+
+    .icon-text {
+      display: none;
+    }
+
+    .implinks {
+      padding: 0;
+    }
+
+}
+
+//Media queries Omar
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .rightbar{
+    display: none;
+  }
+  
+}

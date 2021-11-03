@@ -1,0 +1,167 @@
+header {
+  background-color: white;
+  padding-bottom: 60px;
+}
+
+.navbar {
+  border-bottom: 1px solid rgb(224, 224, 224);
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-nav-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  position: relative;
+}
+
+.form-control {
+  padding: 7px 180px 7px 12px;
+  border: 1px solid rgb(219, 219, 219);
+  transition-duration: 1s;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #3b49df;
+}
+
+.input-button {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  bottom: 16px;
+  background-color: transparent;
+  border: none;
+}
+
+.rigth-nav-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-post-button {
+  background-color: #3b49df;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.create-post-button:hover {
+  color: white;
+  background-color: #323ebe;
+  text-decoration: none;
+}
+
+.nav-notifications-container,
+.nav-comments-container,
+.search-icon-container {
+  background-color: transparent;
+  border: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.hamburguer-menu-container {
+  background-color: transparent;
+  border: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.2s ease-in;
+}
+
+.hamburguer-menu-container:hover {
+  background-color: #f6f6f6;
+}
+
+.hamburguer-icon {
+  max-width: 100%;
+  width: 25px;
+  height: 25px;
+}
+
+.nav-comments-container,
+.nav-notifications-container,
+.search-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-notifications-container:hover,
+.nav-comments-container:hover,
+.search-icon-container:hover {
+  background-color: #f6f6f6;
+}
+
+.badge {
+  top: 16;
+  right: 26;
+  bottom: 70;
+}
+
+.profile-pic-container {
+  background-color: transparent;
+  border: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  margin: 0 8px;
+  cursor: pointer;
+  border: 2px solid gray;
+  padding: 2px;
+
+  .profile-picture {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
+  margin: 5px;
+}
+
+.drop-user,
+.drop-settings {
+  border-bottom: 1px solid rgb(199, 199, 199);
+  width: 240px;
+}
+
+.drop-link {
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin: 5px;
+}
+
+.drop-link:hover {
+  background-color: #f2f2f2;
+}
+
+.username {
+  font-weight: 700;
+  color: #323da3;
+  font-size: 1.3rem;
+}

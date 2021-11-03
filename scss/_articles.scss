@@ -1,0 +1,152 @@
+.articles {
+  background-color: $columnBackgroundColor;
+
+  ul {
+    margin-bottom: 5px;
+    padding-left: 0.3rem;
+  }
+}
+
+.pic {
+  width: 40px;
+  border-radius: 50px;
+  margin: 0;
+}
+
+.profile {
+  // display: inline-block;
+  // widt%;h: 50
+  padding: 0;
+
+  p {
+    margin: 0 0 2px 20px;
+  }
+}
+
+.post-card {
+  @include postcard();
+  padding: 0 0 15px 0;
+}
+
+.name {
+  font-size: 1.1em;
+  color: black;
+  font-weight: 500;
+}
+
+.date {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.note {
+  padding: 10px 50px;
+
+  .links {
+    padding-top: 10px;
+  }
+
+  .bottom {
+    padding: 0;
+  }
+}
+
+.bottom {
+  margin: 25px 0 0 0;
+}
+
+.title {
+  font-size: 1.7em;
+  font-weight: bolder;
+  color: black;
+  padding-bottom: 10px;
+}
+
+.title:hover {
+  color: #323ebe;
+}
+
+.liga {
+  color: gray;
+}
+
+.liga:hover {
+  color: black;
+}
+
+.implinks {
+  color: rgb(36, 35, 35);
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+.implinks:hover {
+  color: black;
+  border-radius: 5px;
+  background: $mainBackgroundColor;
+}
+
+.time {
+  color: gray;
+  font-size: 0.8em;
+  margin: 8px 0 0 12%;
+  padding-top: 6px;
+  display: inline-block;
+}
+
+.save {
+  display: inline-block;
+  padding: 3px 8px;
+  color: black;
+  background: rgb(201, 197, 197);
+  border-radius: 5px;
+  margin-left: 5px;
+}
+.save:hover {
+  background: gray;
+}
+
+.corner {
+  padding: 0;
+}
+
+.post-card2 {
+  @include postcard();
+  margin-top: 10px;
+}
+
+.card-nav {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 12px 15px;
+}
+
+.card-link {
+  @include navbtn();
+}
+
+.card-link-variant {
+  @include navbtn();
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
+.card-nav:hover {
+  background-color: rgb(203, 203, 206);
+}
+
+.card-img {
+  margin-bottom: 20px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.profile-variant {
+  padding: 0 20px;
+}
+
+.card-variant {
+  padding: 0 20px 0 20px;
+}

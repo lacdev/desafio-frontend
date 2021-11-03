@@ -1,0 +1,22 @@
+.footer {
+  background-color: $footerBackgroundColor;
+
+  .footer-content {
+    @include footerFlex();
+    padding: 30px;
+
+    .footer-1 {
+      text-align: center;
+      .footer-link {
+        @include footerLinks();
+      }
+    }
+
+    .footer-2 {
+      text-align: center;
+      .footer-link {
+        @include footerLinks();
+      }
+    }
+  }
+}

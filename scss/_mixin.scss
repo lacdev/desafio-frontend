@@ -1,0 +1,64 @@
+//Mixins Globales
+
+//Mixins de German
+@mixin bannerFlex() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin footerFlex() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin footerLinks() {
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+//Mixins de Brisah
+
+//Mixins de Daniel
+
+@mixin postcard() {
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: solid rgb(180, 176, 176) 0.05px;
+}
+
+@mixin navbtn() {
+  position: relative;
+  color: black;
+}
+
+//Mixins de Omar
+@mixin containers-sbr {
+  background-color: $sidebarrightbgcolor;
+  padding: 20px;
+  border-radius: 3%;
+  color: black;
+  margin-bottom: 20px;
+}
+
+@mixin header-bar {
+  background-color: $sidebarrightbgcolor;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+@mixin link-card1 {
+  color: $linkfontcolorsbr;
+  text-decoration: none;
+}
+@mixin hover-efect {
+  background-color: white;
+  color: $linkfontcolorsbr;
+}

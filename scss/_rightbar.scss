@@ -1,0 +1,74 @@
+.rightbar {
+  background-color: $columnBackgroundColor;
+  height: auto;
+  max-width: 100%;
+}
+  .card1{
+  @include containers-sbr;
+  
+  max-width: 100%;
+  .text-a-href{
+    color:black;
+  }
+  .link-card1{
+  color: $linkfontcolorsbr;
+  text-decoration: none;
+  }
+}
+  .card-listings{
+    @include containers-sbr;
+    .header-listings{
+      @include header-bar;
+    }
+  .text-a-href{
+    color:black;
+    text-decoration: none;
+  }
+.link-card1{
+  @include link-card1;
+}
+.body-listings{
+  @include link-card1;
+  color:black;  
+}
+.link-listings{
+display:block;
+  @include link-card1;
+  color: black;
+  padding:10px;
+  transition: .5s;
+}
+  .link-listings:hover{
+    @include hover-efect;
+
+  }
+
+.letras-grises-bajo{
+  color:$colorfuentegris;
+}
+.create-listings{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:black;
+  text-decoration: none;
+}
+.create-listings:hover{
+@include hover-efect;
+}
+.news-style{
+  color: black;
+  text-decoration: none;
+}
+.boton-morado{
+  background-color: $bannerBackground;
+  color:$mainBackgroundColor;
+  border-radius: 20%;
+  padding: 3px;
+  margin-top:5px;
+  font-size: 13px;
+}
+  }
+  
+
+  
