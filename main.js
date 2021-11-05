@@ -13,7 +13,8 @@ $fecha = document.querySelector(".fecha"),
 $tags = document.querySelector(".tags"),
 $titulo = document.querySelector(".titulo"),
 $template = document.querySelector(".imprimir"),
-$contenido = document.querySelector(".contenido-post")
+$contenido = document.querySelector(".contenido-post"),
+$editar = document.querySelector("modificar")
 //Para no hacer varias incerciones al DOM asi que se abre el fragmento
 $fragment = document.createDocumentFragment();
 
@@ -49,7 +50,7 @@ const crud = (metodos) => {
   }
 
 //Iniciar a crear el la carga para imprimir los elementos obtenidos de la DB
-const getAllPosts = () => {
+const getPost = () => {
     let idfake = "-MniCCuY7Hro49xVMH-M";
    crud({
         url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${idfake}.json`,
@@ -58,7 +59,7 @@ const getAllPosts = () => {
         data:null
     })
 }
-document.addEventListener("DOMContentLoaded", getAllPosts);
+
  
 const renderPost = (respuesta) => {
     $autor.textContent = respuesta.name
@@ -75,15 +76,20 @@ const renderPost = (respuesta) => {
     })
 }
 
-document.addEventListener("submit", event => {
-    if(event.target === $publicacion){
-        event.preventDefault();
-    }
-    
-})
+document.addEventListener("DOMContentLoaded", getPost);
 
-
-
-
-
-
+const putPost = () => {
+    let idfake = "-MniCq-1zu_afiH_LwPg";
+    crud({
+        url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${idfake}.json`,
+        succes:(respuesta) => { renderPost(respuesta)  },
+        error: (err) => {console.log(err)},
+        data:{
+            name: $autor.value,
+            title: $titulo.value,
+            fecha: $fecha.value,
+            imageURL: $imagen.value,
+            contenido: $contenido.value,
+        }
+    })
+}
