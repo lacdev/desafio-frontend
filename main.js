@@ -6,10 +6,13 @@ console.log("Desafio Frontend Js14")
 .- obtener con el get los datos de la bd 
 
 */
-const $imagen = document.querySelector(".imagenurl"),
+const $publicacion = document.querySelector(".main-post"), 
+$imagen = document.querySelector(".imageurl"),
 $autor = document.querySelector(".autor"),
 $fecha = document.querySelector(".fecha"),
 $tags = document.querySelector(".tags"),
+$titulo = document.querySelector(".titulo"),
+$template = document.querySelector(".imprimir"),
 $contenido = document.querySelector(".contenido-post")
 //Para no hacer varias incerciones al DOM asi que se abre el fragmento
 $fragment = document.createDocumentFragment();
@@ -47,16 +50,37 @@ const crud = (metodos) => {
 
 //Iniciar a crear el la carga para imprimir los elementos obtenidos de la DB
 const getAllPosts = () => {
-    crud({
-        url:"https://desafio-js-fa573-default-rtdb.firebaseio.com/.json",
-        succes:(respuesta) => {console.log(respuesta)},
+    let idfake = "-MniCCuY7Hro49xVMH-M";
+   crud({
+        url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${idfake}.json`,
+        succes:(respuesta) => { renderPost(respuesta)  },
         error: (err) => {console.log(err)},
         data:null
     })
 }
 document.addEventListener("DOMContentLoaded", getAllPosts);
  
+const renderPost = (respuesta) => {
+    $autor.textContent = respuesta.name
+    $fecha.textContent = respuesta.fecha
+    $titulo.textContent = respuesta.title
+    $contenido.textContent = respuesta.contenido
+    $imagen.src = respuesta.imageURL
 
+    respuesta.tags.forEach((tag) => {
+        const pTag = document.createElement("p");
+            pTag.classList.add("tag");
+            pTag.textContent = tag;
+            $tags.appendChild(pTag);
+    })
+}
+
+document.addEventListener("submit", event => {
+    if(event.target === $publicacion){
+        event.preventDefault();
+    }
+    
+})
 
 
 
