@@ -1,21 +1,22 @@
 console.log("Desafio Frontend Js14")
 
-function getPosts () {
-    const request = new XMLHttpRequest()
-    const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
+// function getPosts () {
+//     const request = new XMLHttpRequest()
+//     const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
 
-    request.responseType = 'json'
-    request.responseText = 'text' //Da string
-    request.open('GET', URL)
-    request.send()
-    console.log(request)
+//     request.responseType = 'json'
+//     request.responseText = 'text' //Da string
+//     request.open('GET', URL)
+//     request.send()
+//     console.log(request)
 
-    request.onload = function() {
-        const posts = request.response; 
-        //JSON convertido a objeto
-        console.log(posts)
-    }
-}
+//     request.onload = function() {
+//         const posts = request.response; 
+//         //JSON convertido a objeto
+//         console.log(posts)
+//     }
+
+// }
 
 /* 
 
@@ -46,66 +47,65 @@ const post = {
 
 //Function para crear posts dinamicos
 
-function createPost () {
+// function createPost () {
 
-}
+// }
 
 //Crear post dinamico 
 
-const post = { 
-    name: "Selene", 
-    title: "Mi quinto post",
-    fecha: "2022-10-04",
-    imageURL: "YEAHEAYEAHEAH",
-    contenido: "Mi super contenido de Selene",
-    tags: [
-        "CSS",
-        "HTML",
-        "React",
-        "NodeJs"
-    ]
-}
+// const post = { 
+//     name: "Ivan Diaz", 
+//     title: "Day 27 of 100 Days of Code & Scrum: Rest Day & Company Banner",
+//     fecha: "2021-10-16",
+//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s---a3NKFqq--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lgys2sbkxngso70nsus1.jpg",
+//     contenido: "Mi contenido",
+//     tags: [
+//         "100daysOfCode", "Javascript", "Beginners", "Programming"
+//     ]
+// }
 
-function createPost (post) {
-    const request = new XMLHttpRequest()
-    const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
+// function createPost (post) {
+//     const request = new XMLHttpRequest()
+//     const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
 
-    //Requerido para debuggear estado de peticion.
-    request.addEventListener("readystatechange", () => {
-        if (request.readyState === 200) {
-            console.log(request.responseText)
-        }  else {
-            console.log(request.readyState)
-        }
-    })
-    request.open('POST', URL, true)
-    request.send(JSON.stringify(post))
-    console.log(request)
-}
+//     //Requerido para debuggear estado de peticion.
+//     request.addEventListener("readystatechange", () => {
+//         if (request.readyState === 200) {
+//             console.log(request.responseText)
+//         }  else {
+//             console.log(request.readyState)
+//         }
+//     })
+//     request.open('POST', URL, true)
+//     request.send(JSON.stringify(post))
+//     console.log(request)
+
+// }
 
 //Cuando el usuario de click a delete
 
-function deletePosts () {
-    const request = new XMLHttpRequest()
-    const URL = `https://desafio-js-fa573-default-rtdb.firebaseio.com/.json`
+// function deletePosts () {
+//     const request = new XMLHttpRequest()
+//     const URL = `https://desafio-js-fa573-default-rtdb.firebaseio.com/${key}.json`
 
-    request.responseText = 'text' //Da string
+//     request.responseText = 'text' //Da string
 
-    request.addEventListener("readystatechange", () => {
-        if (request.readyState === 4) {
-          if (request.status === 200) {
-            console.log(request.responseText);
-            const posts = JSON.parse(request.responseText)
-            console.log(posts)
-            for (let key in posts) {
-                console.log(key)
-            }
-          }
-        } else {
-          console.log(request.readyState);
-        }
-      });
-    request.open('GET', URL)
-    request.send()
-    console.log(request)
-}
+//     request.addEventListener("readystatechange", () => {
+//         if (request.readyState === 4) {
+//           if (request.status === 200) {
+//             console.log(request.responseText);
+//             const posts = JSON.parse(request.responseText)
+//             console.log(posts)
+//             for (let key in posts) {
+//                 console.log(key)
+//             }
+//           }
+//         } else {
+//           console.log(request.readyState);
+//         }
+//       });
+//     request.open('DELETE', URL)
+//     request.send()
+//     console.log(request)
+
+// }
