@@ -4,13 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-      crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>Reto dev.to</title>
+    <title>Reto dev.to JS</title>
   </head>
   <body>
  
@@ -472,9 +469,11 @@
       <!-- Offcanvas Menu Finish  -->
 
       <div class="row">
-        <!-- Contenedor de Brisah -->
-
+ <!-- ----------------------------------------------------------------------- -->
+ <!--                                 Leftbar                                 -->
+ <!-- ----------------------------------------------------------------------- -->
         <div class="col-1 post-leftbar"></div>
+
 
 <!-- ----------------------------------------------------------------------- -->
 <!--                 Contenedor de la vizualización del post                 -->
@@ -482,11 +481,22 @@
 
         <div class="col-8 post-articles">
           <div class="main-post">
-            
+         <!--<template id="imprimir">-->   
+             <img src="#" class="imageurl">
+             <p class="autor"></p>
+            <span class="fecha"></span>
+             <h1 class="titulo"></h1>
+                 <p class="tags"></p>
+             <h3 class="contenido-post"></h3>
+             <button class="edit">Editar</button>
+            <!--  </template> -->
+
           </div>
         </div>
 
-        <!-- Contenedor de Omar  -->
+ <!-- ----------------------------------------------------------------------- -->
+ <!--                                Rightbar                                 -->
+ <!-- ----------------------------------------------------------------------- -->
 
         <div class="col-3 post-rightbar"></div>
       </div>
@@ -538,10 +548,13 @@
       </div>
     </div>
 
+
+    <script src="../main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous" >
+  </script>
+   
   </body>
 </html>
