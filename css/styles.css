@@ -915,4 +915,21 @@ header {
     font-size: 0.6em;
   }
 }
+
+body {
+  background-color: #ecebeb;
+}
+
+#searchButton {
+  background-color: blue;
+}
+
+.tag {
+  height: 30px;
+}
+
+.tag:hover {
+  background-color: #fff;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=styles.css.map */
