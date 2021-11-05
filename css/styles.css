@@ -915,4 +915,34 @@ header {
     font-size: 0.6em;
   }
 }
+
+body {
+  background-color: #EFEFEF !important;
+}
+
+header {
+  padding-bottom: 0px;
+  background-color: #EFEFEF !important;
+  border-bottom: 15px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 30px;
+  padding-left: 200px;
+  padding-right: 600px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+footer .btn {
+  margin-right: 30px;
+}
+
+.new-title {
+  font-size: 32px;
+}
 /*# sourceMappingURL=styles.css.map */

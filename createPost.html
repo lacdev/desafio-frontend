@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./main.js" defer></script>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+        crossorigin="anonymous"
+    />
+    <title>Create Post</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/index.html"><svg width="50" height="40" viewBox="0 0 50 40" fill="white" xmlns="http://www.w3.org/2000/svg"><rect width="50" height="40" rx="3" style="fill: currentColor;"></rect><path d="M19.099 23.508c0 1.31-.423 2.388-1.27 3.234-.838.839-1.942 1.258-3.312 1.258h-4.403V12.277h4.492c1.31 0 2.385.423 3.224 1.27.846.838 1.269 1.912 1.269 3.223v6.738zm-2.808 0V16.77c0-.562-.187-.981-.562-1.258-.374-.285-.748-.427-1.122-.427h-1.685v10.107h1.684c.375 0 .75-.138 1.123-.415.375-.285.562-.708.562-1.27zM28.185 28h-5.896c-.562 0-1.03-.187-1.404-.561-.375-.375-.562-.843-.562-1.404V14.243c0-.562.187-1.03.562-1.404.374-.375.842-.562 1.404-.562h5.896v2.808H23.13v3.65h3.088v2.808h-3.088v3.65h5.054V28zm7.12 0c-.936 0-1.684-.655-2.246-1.965l-3.65-13.758h3.089l2.807 10.804 2.808-10.804H41.2l-3.65 13.758C36.99 27.345 36.241 28 35.305 28z" style="fill: var(--base-inverted);"></path></svg></a>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active create-Post" aria-current="page" href="#">Create Post</a>
+                  <a class="nav-link edit" href="#">Edit</a>
+                  <a class="nav-link preview" href="#">Preview</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="container">
+        <div class="card" style="width: 70%;">
+            <div class="card-body">
+                <input class= "cover-image-url" type = "text" placeholder="Add cover image URL" style = "width: 30%"><br>
+                <input class= "new-title" type = "text" placeholder="New title goes here..." style = "width: 90%; height: 50px"><br>
+                <span>Add up to four tags</span>
+                <div class="div tag-selector">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Javascript</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">HTML</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Sass</label>
+                      </div>
+                </div>
+                <div class="tag-selector">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">React</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">JQuery</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Programming</label>
+                      </div>
+                </div>
+                <input class= "image-url" type = "text" placeholder="Add image URL" style = "width: 30%"><br>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 400px"></textarea>
+                    <label for="floatingTextarea2">Write your post here</label>
+                </div>
+            </div>
+          </div>
+    </div>
+    <footer>
+        <button type="button" class="btn btn-primary">Publish</button>
+        <button type="button" class="btn btn-secondary">Save Draft</button>
+        <button type="button" class="btn btn-secondary"><img src = "images/gear.svg"></button>
+        <button type="button" class="btn btn-secondary">Revert new changes</button>
+    </footer>
+</body>
+</html>
