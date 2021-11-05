@@ -430,6 +430,10 @@ header {
   margin: 16px 32px 16px 0px;
 }
 
+.card .post-body {
+  display: none;
+}
+
 .articles {
   background-color: transparent;
 }

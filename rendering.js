@@ -1,9 +1,16 @@
 console.log("rendering JS")
 
 const articles = document.querySelector(".articles")
-console.log(articles)
 
 const postsArray = [
+    {
+    name: "Alan Medina",
+    date: "2021-10-16",
+    imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--iXdS49-U--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mm5uqgq9eej1l4x8wchd.png",
+    title: "Don't Optimize Your React App, Use Preact Instead",
+    content: "Mi contenido",
+    tags: ["React", "HTML", "Programming", "Components"]
+    },
     {name: "German Martinez",
     date: "2021-10-16",
     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--gRcOIbcX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/87imm1ntaiou8jjzp7ap.jpg",
@@ -96,6 +103,10 @@ function renderPost (post) {
             tagsContainer.appendChild(pTag)
         })
         card.appendChild(tagsContainer)
+        const postBody = document.createElement("div")
+        postBody.classList.add("post-body")
+        postBody.textContent = content
+        card.appendChild(postBody)
         const deleteButton = document.createElement("button")
         deleteButton.classList.add("btn-danger", "delete-post")
         deleteButton.textContent = "Eliminar Post"
