@@ -1,3 +1,52 @@
+
+.card {
+  border-radius: 8px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  .image-container {
+    max-width: 100%;
+  border-radius: 8px;
+    .post-image {
+      max-width: 100%;
+      border-radius: 8px;
+  border-radius: 8px;
+    }
+  }
+
+  .author-info-container {
+    color: black;
+    align-self: flex-start;
+  }
+  .post-title-container {
+    padding: 0px 32px;
+    .post-title {
+      text-decoration: none;
+      color: black;
+      text-align: left;
+    }
+  }
+
+  .tags-container {
+    color: gray;
+    text-align: left;
+    padding: 8px 32px;
+    display: flex;
+    .tag {
+      margin: 0 8px;
+    }
+  }
+
+  .delete-post {
+    border: none;
+    border-radius: 8px;
+    max-width: 75%;
+    align-self: flex-end;
+    padding: 8px 16px;
+    margin: 16px 32px 16px 0px;
+  }
+}
+
 .articles {
   background-color: $columnBackgroundColor;
 
@@ -150,3 +199,4 @@
 .card-variant {
   padding: 0 20px 0 20px;
 }
+
