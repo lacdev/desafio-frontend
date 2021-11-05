@@ -372,6 +372,7 @@ header {
   border-radius: 8px;
   width: 100%;
   background-color: white;
+  margin-bottom: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -402,6 +403,8 @@ header {
   text-decoration: none;
   color: black;
   text-align: left;
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .card .tags-container {

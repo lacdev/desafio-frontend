@@ -3,6 +3,7 @@
   border-radius: 8px;
   width: 100%;
   background-color: white;
+  margin-bottom: 16px;
   display: flex;
   .image-container {
     max-width: 100%;
@@ -24,6 +25,8 @@
       text-decoration: none;
       color: black;
       text-align: left;
+      font-size: 32px;
+      font-weight: 700;
     }
   }
 
