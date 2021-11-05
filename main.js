@@ -14,7 +14,7 @@ $tags = document.querySelector(".tags"),
 $titulo = document.querySelector(".titulo"),
 $template = document.querySelector(".imprimir"),
 $contenido = document.querySelector(".contenido-post"),
-$editar = document.querySelector("modificar")
+$editar = document.querySelector("modificar"),
 //Para no hacer varias incerciones al DOM asi que se abre el fragmento
 $fragment = document.createDocumentFragment();
 
