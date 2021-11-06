@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <title>Reto dev.to JS</title>
+   
+      <title>Reto dev.to JS</title>
   </head>
   <body>
  
@@ -46,7 +47,7 @@
           <div class="left-nav-elements"></div>
 
           <div class="rigth-nav-elements">
-            <a href="#" class="create-post-button">Create Post </a>
+            <a href="../createPost.html" class="create-post-button">Create Post </a>
 
             <div class="search-icon-container">
               <svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewbox="0 0 24 24" role="img"  aria-labelledby="a1ittjicpjpx3gz550xp8skqdb9cjo4t"  class="crayons-icon" >
@@ -489,9 +490,39 @@
              <div class="tags"> </div>
                  
              <h3 class="contenido-post">El super contenido del post</h3>
-             <button type= "button" class="edit" id="modificar">Editar</button>
+             <button type= "button" id="modificar" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
+             <input type="hidden" name="id">
              <!-- ----------------------------- </template> ----------------------------- -->
-
+             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Corrección de post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="crud-form">
+                      <div class="form-group">
+                      <label for="imagen-url">Agrega Imagen</label>
+                       <input type="text" name="fondoimagen" class="cover-image-url" id="imagen-url" placeholder="Agrega un enlace de imagen">
+                      </div>
+                      <div class="form-group">
+                       <label for="title-post">Titulo</label>
+                       <input type="text" name="titulopost" class="new-title" id="title-post" placeholder="Agrega un titulo">
+                      </div>
+                      <div class="form-group">
+                        <label for="contenido-post">Información</label>
+                        <textarea class="form-control" name="info" id="contenido-post" rows="3"></textarea>
+                      </div>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
