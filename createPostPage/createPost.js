@@ -25,6 +25,8 @@ const tag4 = document.getElementById("inlineCheckbox4");
 const tag5 = document.getElementById("inlineCheckbox5");
 const tag6 = document.getElementById("inlineCheckbox6");
 
+
+
 upload.addEventListener('click', send => {
     const date = new Date();
     const fecha = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
@@ -37,7 +39,7 @@ upload.addEventListener('click', send => {
         contenido: content.value,
         tags: []
     }
-    
+
     createPost(post);
 });
 
