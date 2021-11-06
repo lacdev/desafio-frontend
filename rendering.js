@@ -54,7 +54,6 @@ function renderPost (post, key) {
             event.preventDefault()
             const cardElement = event.target.closest(".card")
             deletePost(event.target.id, deletefromDOM(cardElement), cardElement)
-            
         })
         card.appendChild(deleteButton)
         articles.appendChild(card)

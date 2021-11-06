@@ -1,5 +1,7 @@
 console.log("Desafio Frontend Js14")
 
+//Pruebas de funciones GET,POST,PUT,DELETE en Firebase.
+
 // function getPosts () {
 //     const request = new XMLHttpRequest()
 //     const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"

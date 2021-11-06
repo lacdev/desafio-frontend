@@ -380,13 +380,12 @@ header {
 
 .card .image-container {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
 }
 
 .card .image-container .post-image {
   max-width: 100%;
-  border-radius: 8px;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
 }
 
 .card .author-info-container {
@@ -713,8 +712,8 @@ header {
 }
 
 .post-leftbar {
-  height: 400px;
-  background-color: black;
+  min-height: 400px;
+  background-color: transparent;
 }
 
 .post-articles {
@@ -722,9 +721,10 @@ header {
 }
 
 .main-post {
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   width: 100%;
   background-color: white;
+  margin-bottom: 48px;
 }
 
 .main-post .post-image {
@@ -862,8 +862,8 @@ header {
 }
 
 .post-rightbar {
-  height: 600px;
-  background-color: red;
+  min-height: 400px;
+  background-color: transparent;
 }
 
 .footer {
