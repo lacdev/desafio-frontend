@@ -1,0 +1,23 @@
+body {
+    background-color: #EFEFEF!important;
+}
+header {
+    padding-bottom: 0px;
+    background-color: #EFEFEF!important;
+    border-bottom: 15px;
+}
+footer {
+    display: flex;
+    padding-top: 30px;
+    padding-left: 200px;
+    padding-right: 600px;
+    justify-content: left ;
+    .btn {
+        margin-right: 30px;
+    }
+}
+
+.new-title {
+    font-size: 32px;
+
+}
