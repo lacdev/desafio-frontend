@@ -30,11 +30,20 @@ upload.addEventListener('click', send => {
         fecha: fecha,
         imageURL: imageURL.value,
         contenido: content.value,
-        tags: []
+        tags: tagValue().split(", ")
     }
 
     createPost(post);
 });
+
+function tagValue(){
+    const tagValues = document.getElementsByClassName("filter-option-inner-inner");
+    console.log(tagValues)
+    console.log(tagValues[0].innerText)
+
+    return tagValues[0].innerText
+}
+
 
 function createPost (post) {
     const request = new XMLHttpRequest()
