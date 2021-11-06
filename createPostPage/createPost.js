@@ -18,13 +18,6 @@ const title = document.getElementById("new-title");
 const nameTag = document.getElementById("name-tag");
 const imageURL = document.getElementById("image-url");
 const content = document.getElementById("post-content");
-const tag1 = document.getElementById("inlineCheckbox1");
-const tag2 = document.getElementById("inlineCheckbox2");
-const tag3 = document.getElementById("inlineCheckbox3");
-const tag4 = document.getElementById("inlineCheckbox4");
-const tag5 = document.getElementById("inlineCheckbox5");
-const tag6 = document.getElementById("inlineCheckbox6");
-
 
 
 upload.addEventListener('click', send => {
@@ -45,7 +38,7 @@ upload.addEventListener('click', send => {
 
 function createPost (post) {
     const request = new XMLHttpRequest()
-    const URL = "https://prueba-clase-18-default-rtdb.firebaseio.com/.json"
+    const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
 
     //Requerido para debuggear estado de peticion.
     request.addEventListener("readystatechange", () => {
