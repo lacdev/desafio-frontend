@@ -11,7 +11,7 @@
 .- 
 
 */
-const $publicacion = document.querySelector(".main-post"), 
+let $publicacion = document.querySelector(".main-post"), 
 $form = document.querySelector(".crud-form"),
 $imagen = document.querySelector(".imageurl"),
 $autor = document.querySelector(".autor"),
@@ -79,13 +79,18 @@ const renderPost = (respuesta) => {
     $contenido.textContent = respuesta.contenido
     $imagen.src = respuesta.imageURL
 
+    $tags.innerHTML = "";
+
     respuesta.tags.forEach((tag) => {
         const pTag = document.createElement("p");
             pTag.classList.add("tag");
             pTag.textContent = tag;
             $tags.appendChild(pTag);
     })
+
+    document.querySelector("#exampleModal").modal("hide");
 }
+
 
 document.addEventListener("DOMContentLoaded", getPost);
 /* ------------------------- Pasos para hacer el PUT ------------------------ 
@@ -117,10 +122,61 @@ const putPost = () => {
 /* --------------------------------- Prueba --------------------------------- */
 
 
-document.addEventListener("click", event => {
 
+ 
+ 
+
+document.getElementById("salvar").addEventListener("click", event => {
+    //console.log(event);
+   // console.log("🚀 ~ file: renderpost.js ~ line 122 ~ $contenido.textContent", $contenido.textContent);
+    let $contenido = document.querySelector("#contenido-post").value;
+    let $imagen = document.querySelector("#imagen-url").value;
+    let $titulo = document.querySelector("#title-post").value;
+    let  date = new Date();
+    let $fecha = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    console.log("🚀 ~ file: renderpost.js ~ line 131 ~ document.getElementById ~ $contenido", $contenido)
+    const postId = urlparameter("id")
+    crud ({
+        url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${postId}.json`,
+        method: "PUT",
+        succes: (respuesta) => { renderPost ({name: $autor.textContent,
+            title: $titulo,
+           imageURL: $imagen,
+          contenido: $contenido,
+           fecha: $fecha,
+            tags: [
+               "React",
+               "Javascript",
+                "Code Quality",
+               "Components"
+               ] })},
+        error: (err) => $form.insertAdjacentHTML("afterend, <p><b>${err}</b></p>"),
+        data: {
+            name: $autor.textContent,
+            title: $titulo,
+           imageURL: $imagen,
+          contenido: $contenido,
+           fecha: $fecha,
+            tags: [
+               "React",
+               "Javascript",
+                "Code Quality",
+               "Components"
+               ]
+            }
+        })
 
 })
+
+const urlparameter =  (paramName) => {
+    const params = window.location.search; 
+    const urlParams = new URLSearchParams(params);
+   const param = urlParams.get(paramName);
+   
+   return param; 
+}
+  
+/* ------------------------------------ X ----------------------------------- 
 document.addEventListener('button', event => {
     let idfake = "-MniCq-1zu_afiH_LwPg";
 //Identificar si esta con o sin datos 
@@ -141,3 +197,4 @@ document.addEventListener('button', event => {
     }
 
 })
+*/
