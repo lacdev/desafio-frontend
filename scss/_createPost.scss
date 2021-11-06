@@ -21,3 +21,7 @@ footer {
     font-size: 32px;
 
 }
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
