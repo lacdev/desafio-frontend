@@ -3,6 +3,7 @@ console.log("rendering JS")
 const articles = document.querySelector(".articles")
 
 function renderPost (post, key) {
+
     const { name, fecha, imageURL, title, content, tags } = post
     
         const card = document.createElement('div')
@@ -65,23 +66,41 @@ function deletefromDOM (element) {
 }
 
 function getPosts () {
-    const request = new XMLHttpRequest()
-    const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
 
-    request.responseType = 'json'
+    //Crear Request
+    const request = new XMLHttpRequest()
+    //Crear URL para request
+    const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
+    //El response sera un JSON string
     request.responseText = 'text' 
+    //Definir el tipo de Request 
     request.open('GET', URL)
+    //Mandar la peticion que definimos antes
     request.send()
+    //Log de la peticion.
     console.log(request)
 
     request.onload = function() {
-        const posts = request.response; 
-
-        for (let key in posts) {
-            console.log(key)
-            renderPost(posts[key], key)
-        }
+        const posts = JSON.parse(request.response); 
+        //Log de la conversion de JSON a objeto
         console.log(posts)
+        //Convertimos el Objeto que convertimos desde el JSON ahora a un array de arrays.
+        const postsArray = Object.entries(posts)
+        //Log de array de arrays
+        console.log(postsArray)     
+        //Iteramos sobre el array que acabamos de crear a partir del objeto.
+        postsArray.forEach((post) => {
+           console.log(post[0], post[1])
+           renderPost(post[1], post[0])
+       })
+
+       //Iterating with objects from JSON
+
+        // for (let key in posts) {
+        //     console.log(key)
+        //     renderPost(posts[key], key)
+        // }
+
     }
 }
 
