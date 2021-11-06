@@ -54,15 +54,7 @@ function renderPost (post, key) {
             event.preventDefault()
             const cardElement = event.target.closest(".card")
             deletePost(event.target.id, deletefromDOM(cardElement), cardElement)
-            // const cardElement = event.target.closest(".card")
-            // cardElement.remove()
-            // console.log(event.target.closest(".card").dataset.id) 
-            //  console.log(event.target)
-            // console.log(event.target.id)
-            //Tomar el data-id attribute del card que tiene que ser igual al id del key
-            //Mandar a llamar el metodo DELETE id tiene que ser igual al id de la base de datos. 
-            //Eliminarlo de la base de datos
-            //on success. Eliminarlo del DOM.
+            
         })
         card.appendChild(deleteButton)
         articles.appendChild(card)
@@ -94,11 +86,11 @@ function getPosts () {
     }
 }
 
-function deletePost (key, success, domElement) {
+function deletePost (key, domElement) {
     const request = new XMLHttpRequest()
     const URL = `https://desafio-js-fa573-default-rtdb.firebaseio.com/${key}.json`
 
-    request.responseText = 'text' //Da string
+    request.responseText = 'text' 
     console.log(key)
     request.addEventListener("readystatechange", () => {
         if (request.readyState === 4) {
@@ -117,65 +109,4 @@ function deletePost (key, success, domElement) {
 
 getPosts()
 
-// const postsArray = [
-//     {
-//     name: "Alan Medina",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--iXdS49-U--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mm5uqgq9eej1l4x8wchd.png",
-//     title: "Don't Optimize Your React App, Use Preact Instead",
-//     content: "Mi contenido",
-//     tags: ["React", "HTML", "Programming", "Components"]
-//     },
-//     {name: "German Martinez",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--gRcOIbcX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/87imm1ntaiou8jjzp7ap.jpg",
-//     title: "You don't need useState + useEffect",
-//     content: "Mi contenido",
-//     tags: ["React", "Javascript", "Code Quality", "Components"],},
-//     {name: "Alejandra Paez",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--dMGHjPjl--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vadgli9prwpdsdnk6ax9.jpeg",
-//     title: "How to get the size of a directory in Linux",
-//     content: "Mi contenido",
-//     tags: ["Linux", "Terminal", "Code Quality", "System"],},
-//     {name: "Selene Ch",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--GOga6uCd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e4uvfof3yvto0uqqaplr.png",
-//     title: "Accessibility Auditing My Portfolio Site - Part 2",
-//     content: "Mi contenido",
-//     tags: ["a11y", "React", "CSS", "Webdev"],},
-//     {name: "Carlos Martinez",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--TsBFItO8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/69nr2p10bpnq7us04vrt.png",
-//     title: "1 line of code: How to get length of the shortest string of an Array",
-//     content: "Mi contenido",
-//     tags: ["Performance", "Javascript", "Code Quality", "Webdev"],},
-//     {name: "Manuel Ramon",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--IFHxNcPD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zpcz578s0ywr20wa1a9p.jpeg",
-//     title: "Getting Started with Gatsby.js",
-//     content: "Mi contenido",
-//     tags: ["React", "Javascript", "Webdev", "Gatsby"],},
-//     {name: "Ivan Diaz",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s---a3NKFqq--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lgys2sbkxngso70nsus1.jpg",
-//     title: "Day 27 of 100 Days of Code & Scrum: Rest Day & Company Banner",
-//     content: "Mi contenido",
-//     tags: ["100daysOfCode", "Javascript", "Beginners", "Programming"],},
-// ]
-
-// const post = {
-//     name: "German Martinez",
-//     date: "2021-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--gRcOIbcX--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/87imm1ntaiou8jjzp7ap.jpg",
-//     title: "You don't need useState + useEffect",
-//     content: "Mi contenido",
-//     tags: ["React", "Javascript", "Code Quality", "Components"],
-// }
-
-// function createPosts (arrayOfPosts) {
-//     arrayOfPosts.forEach((post) => {
-//         renderPost(post)
-//     })
-// }
 

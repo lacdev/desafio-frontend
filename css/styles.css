@@ -951,6 +951,12 @@ header {
   }
 }
 
+@media (max-width: 795px) {
+  .leftbar {
+    display: none;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 754px) {
   .profile {
     padding: 0 20px;
@@ -963,7 +969,7 @@ header {
   }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 967px) {
   .rightbar {
     display: none;
   }
