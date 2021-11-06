@@ -2,42 +2,42 @@
 
 
 
-// const posts = [
-//     {
-//         nombre: 'Manuel',
-//         title: 'Metodologia CRUD',
-//         contenido: 'En este post veremos los metodos de CRUD'
-//     },
-//     {
-//         nombre: 'Ramon',
-//         title: 'Metodologia HTML',
-//         contenido: 'En este post veremos los metodos de HTML'
-//     }
-// ]
+const posts = [
+    {
+        nombre: 'Manuel',
+        title: 'Metodologia CRUD',
+        contenido: 'En este post veremos los metodos de CRUD'
+    },
+    {
+        nombre: 'Ramon',
+        title: 'Metodologia HTML',
+        contenido: 'En este post veremos los metodos de HTML'
+    }
+]
 
-let postList;
+// let postList;
+
 const formulario = document.querySelector('#searchBar');
 const boton = document.querySelector('#searchButton');
-const card = document.querySelector('#postContainer')
+const resultado = document.querySelector('#postContainer')
 
 const filtrar = () => {
-  
-    // event.preventDefault();
+   
+    resultado.innerHTML ='';
+   
     const texto = formulario.value.toLowerCase();
-    console.log(Object.entries(postList))
-    Object.entries(postList).forEach((post) => {
-        console.log(post)
-        let nombre = post.title.toLowerCase();
-        if(nombre.indexOf(texto) !== -1) {
-            
-            card.innerHTML += `<li>${post.nombre}</li>`
+    
+    for(let post in posts){
+        let nombre = post.nombre.toLowerCase();
+        if(nombre.indexOf(texto) !==-1){
+            resultado.innerHTML += `<li>${post.nombre}</li>`
         }
-        if(nombre.indexOf(texto) == -1) {
-            card.innerHTML = `No se encontraron posts relacionados con tu busqueda`
-        }
-    })
-
+    }
+    if(resultado.innerHTML === '') {
+        resultado.innerHTML = `<li>No se encontraron posts relacionados con tu busqueda...</li>`
+    }
 }
+
 
 function getPosts () {
     const request = new XMLHttpRequest()
@@ -50,11 +50,14 @@ function getPosts () {
     console.log(request)
 
     request.onload = function() {
-         postList = request.response; 
+        const posts = request.response; 
         //JSON convertido a objeto
-         filtrar(postList)
+       // console.log(posts)
+       filtrar(posts)
+
     }
 }
 
-boton.addEventListener('click',getPosts() )
+boton.addEventListener('click', getPosts() )
+
  
