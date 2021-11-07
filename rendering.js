@@ -2,6 +2,8 @@ console.log("rendering JS")
 
 const articles = document.querySelector(".articles")
 
+let postArray = []
+
 function renderPost (post, key) {
 
     const { name, fecha, imageURL, title, content, tags } = post
@@ -85,14 +87,19 @@ function getPosts () {
         //Log de la conversion de JSON a objeto
         console.log(posts)
         //Convertimos el Objeto que convertimos desde el JSON ahora a un array de arrays.
-        const postsArray = Object.entries(posts)
+        postArray = Object.entries(posts)
         //Log de array de arrays
-        console.log(postsArray)     
+        console.log(postArray)     
         //Iteramos sobre el array que acabamos de crear a partir del objeto.
-        postsArray.forEach((post) => {
+        postArray.forEach((post) => {
            console.log(post[0], post[1])
            renderPost(post[1], post[0])
        })
+
+        //conertir fecha a enteros
+        //    postArray[0][1].fecha
+        //    '2021-10-5'
+        //Cuando haga mi sort, hago forEach en ese nuevo array y Borrar el dom antes y renderizar Posts again. 
 
        //Iterating with objects from JSON
 
