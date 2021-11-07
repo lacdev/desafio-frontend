@@ -2,7 +2,10 @@ console.log("rendering JS")
 
 const articles = document.querySelector(".articles")
 
+let postArray = []
+
 function renderPost (post, key) {
+
     const { name, fecha, imageURL, title, content, tags } = post
     
         const card = document.createElement('div')
@@ -65,23 +68,36 @@ function deletefromDOM (element) {
 }
 
 function getPosts () {
+
     const request = new XMLHttpRequest()
     const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
-
-    request.responseType = 'json'
     request.responseText = 'text' 
     request.open('GET', URL)
     request.send()
     console.log(request)
 
     request.onload = function() {
-        const posts = request.response; 
-
-        for (let key in posts) {
-            console.log(key)
-            renderPost(posts[key], key)
-        }
+        const posts = JSON.parse(request.response); 
         console.log(posts)
+        postArray = Object.entries(posts)
+        console.log(postArray)     
+        postArray.forEach((post) => {
+           console.log(post[0], post[1])
+           renderPost(post[1], post[0])
+       })
+
+        //convertir fecha a enteros
+        //    postArray[0][1].fecha
+        //    '2021-10-5'
+        //Cuando haga mi sort, hago forEach en ese nuevo array y Borrar el dom antes y renderizar Posts again. 
+
+       //Iterating with objects from JSON
+
+        // for (let key in posts) {
+        //     console.log(key)
+        //     renderPost(posts[key], key)
+        // }
+
     }
 }
 
