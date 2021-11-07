@@ -13,7 +13,6 @@
 // }
 
 const upload = document.getElementById("upload");
-
 const title = document.getElementById("new-title");
 const nameTag = document.getElementById("name-tag");
 const imageURL = document.getElementById("image-url");
