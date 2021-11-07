@@ -55,16 +55,16 @@ const post = {
 
 //Crear post dinamico 
 
-const post = { 
-    name: "Leo Mora", 
-    title: "Next JS Starter Kit with TypeScript and Tailwind CSS",
-    fecha: "2020-10-16",
-    imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--g4gcBJd5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://github.com/ixartz/Next-js-Boilerplate/raw/master/public/assets/images/nextjs-starter-banner.png%3Fraw%3Dtrue",
-    contenido: "I've just updated my Next JS Starter Template to the latest version, Next JS 12. The perfect starter kit to start your Next JS in seconds with TypeScript.",
-    tags: [
-        "NextJs", "TailwindCSS", "React", "Webdev"
-    ]
-}
+// const post = { 
+//     name: "Leo Mora", 
+//     title: "Next JS Starter Kit with TypeScript and Tailwind CSS",
+//     fecha: "2020-10-16",
+//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--g4gcBJd5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://github.com/ixartz/Next-js-Boilerplate/raw/master/public/assets/images/nextjs-starter-banner.png%3Fraw%3Dtrue",
+//     contenido: "I've just updated my Next JS Starter Template to the latest version, Next JS 12. The perfect starter kit to start your Next JS in seconds with TypeScript.",
+//     tags: [
+//         "NextJs", "TailwindCSS", "React", "Webdev"
+//     ]
+// }
 
 function createPost (post) {
     const request = new XMLHttpRequest()

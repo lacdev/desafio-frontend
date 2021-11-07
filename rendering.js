@@ -69,34 +69,24 @@ function deletefromDOM (element) {
 
 function getPosts () {
 
-    //Crear Request
     const request = new XMLHttpRequest()
-    //Crear URL para request
     const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
-    //El response sera un JSON string
     request.responseText = 'text' 
-    //Definir el tipo de Request 
     request.open('GET', URL)
-    //Mandar la peticion que definimos antes
     request.send()
-    //Log de la peticion.
     console.log(request)
 
     request.onload = function() {
         const posts = JSON.parse(request.response); 
-        //Log de la conversion de JSON a objeto
         console.log(posts)
-        //Convertimos el Objeto que convertimos desde el JSON ahora a un array de arrays.
         postArray = Object.entries(posts)
-        //Log de array de arrays
         console.log(postArray)     
-        //Iteramos sobre el array que acabamos de crear a partir del objeto.
         postArray.forEach((post) => {
            console.log(post[0], post[1])
            renderPost(post[1], post[0])
        })
 
-        //conertir fecha a enteros
+        //convertir fecha a enteros
         //    postArray[0][1].fecha
         //    '2021-10-5'
         //Cuando haga mi sort, hago forEach en ese nuevo array y Borrar el dom antes y renderizar Posts again. 
