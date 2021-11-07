@@ -468,6 +468,10 @@ header {
   font-weight: 700;
 }
 
+.card .post-title:hover {
+  color: #323ebe;
+}
+
 .card .tags-container {
   color: gray;
   text-align: left;
