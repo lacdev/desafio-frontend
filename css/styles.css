@@ -762,15 +762,20 @@ header {
 .card-listings .news-style {
   color: black;
   text-decoration: none;
+  margin-bottom: 16px;
 }
 
 .card-listings .boton-morado {
   background-color: #323da3;
   color: #efefef;
   border-radius: 20%;
-  padding: 3px;
+  padding: 5px 10px;
   margin-top: 5px;
-  font-size: 13px;
+  font-size: 18px;
+}
+
+.header-listings {
+  background-color: transparent !important;
 }
 
 .post-leftbar {
