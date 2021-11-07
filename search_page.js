@@ -2,7 +2,7 @@
 
 let postList;
 const textSearch = document.querySelector('#textSearch')
-const formulario = document.querySelector('.search-bar');
+const formulario = document.querySelector('#search-bar');
 const boton = document.querySelector('#searchButton');
 // const resultado = document.querySelector('#postContainer')
 
@@ -75,7 +75,9 @@ function renderPost (post, key) {
 const filtrar = () => {
    
     articles.innerHTML ='';
+   
     const texto = formulario.value.toLowerCase();
+    
     console.log(texto)
     textSearch.innerHTML = `<li>Search results for ${texto}</li>`;
     
