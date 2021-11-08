@@ -67,7 +67,7 @@ function renderPost (post, key) {
         // })
         // card.appendChild(deleteButton)
         articles.appendChild(card)
-    console.log(post)
+   // console.log(post)
 }
 
 
@@ -79,13 +79,14 @@ const filtrar = () => {
     const texto = formulario.value.toLowerCase();
     
     console.log(texto)
-    textSearch.innerHTML = `<li>Search results for ${texto}</li>`;
+    //textSearch.innerHTML = `<li>Search results for ${texto}</li>`;
     
     for(let post in postList){
         //console.log(postList[post]) 
+        let titulo = postList[post].title.toLowerCase();
         let nombre = postList[post].name.toLowerCase();
-        if(nombre.indexOf(texto) !==-1){
-            console.log(nombre)
+        if(titulo.indexOf(texto) !==-1 || (nombre.indexOf(texto))!==-1){
+            //console.log(nombre)
              renderPost(postList[post],post)
             // resultado.innerHTML += `<li>${postList[post].name}</li>`
         }
@@ -132,8 +133,6 @@ boton.addEventListener('click', event =>{
     event.preventDefault()
     filtrar()
 }) 
-    
-
 getPosts()
 
  
