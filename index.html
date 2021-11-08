@@ -796,15 +796,24 @@
             </div>
               
             <!-- Contenedor de Posts  -->
+            <!-- <div>
 
-            <div class="col-lg-6 col-md-9 col-12 articles"> 
+            </div> -->
+
+            <div class="col-lg-6 col-md-9 col-12"> 
 
                 <div class="filter-buttons-container">
+                  <button class="main-filter-button" id="feed-button">Feed</button>
+                  <button class="main-filter-button" id="newest-button">Newest</button>
+                  <button class="main-filter-button" id="oldest-button">Oldest</button>
                   <button class="main-filter-button" id="year-button">Year</button>
                   <button class="main-filter-button" id="month-button">Month</button>
                   <button class="main-filter-button" id="week-button">Week</button>
                 </div> 
 
+                <div class="articles">
+
+                </div>
             </div>
 
             <!-- Contenedor de RightBar  -->
@@ -945,5 +954,6 @@
     ></script>
     <script src="./rendering.js" defer></script>
     <script src="./main.js" defer></script>
+    <script src="./filtering.js" defer></script>
   </body>
 </html>
