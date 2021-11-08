@@ -47,24 +47,18 @@ const post = {
 
 */
 
-//Function para crear posts dinamicos
+// Crear post prueba
 
-// function createPost () {
-
-// }
-
-//Crear post dinamico 
-
-// const post = { 
-//     name: "Leo Mora", 
-//     title: "Next JS Starter Kit with TypeScript and Tailwind CSS",
-//     fecha: "2020-10-16",
-//     imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--g4gcBJd5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://github.com/ixartz/Next-js-Boilerplate/raw/master/public/assets/images/nextjs-starter-banner.png%3Fraw%3Dtrue",
-//     contenido: "I've just updated my Next JS Starter Template to the latest version, Next JS 12. The perfect starter kit to start your Next JS in seconds with TypeScript.",
-//     tags: [
-//         "NextJs", "TailwindCSS", "React", "Webdev"
-//     ]
-// }
+const post = { 
+    name: "Manuel Ramon", 
+    title: "The power of problem solving in a team.",
+    fecha: "2019-10-17",
+    imageURL: "https://res.cloudinary.com/practicaldev/image/fetch/s--WFZJNTfs--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/l7brbesq1p1ugg89f3l7.jpg",
+    contenido: "But, in case you’re interested, let’s dive a bit deeper into what it really means to be a problem solver, since so many companies add it to their list of ‘desirable qualities’, and so many of us describe ourselves as ‘a problem solver’ when we’re adding to our CVs.",
+    tags: [
+        "Beginners", "Javascript", "Webdev", "Programming"
+    ]
+}
 
 function createPost (post) {
     const request = new XMLHttpRequest()
