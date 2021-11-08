@@ -8,7 +8,6 @@
 .- Crear el metodo para actualizar o editar el post que se esta imprimiendo. 
 .- Utilizar la función con la creación del objeto que tiene la ulr, el metodo, evaluación exitosa o mensaje error.
 .- Crear un evento para el boton de editar para que ocuando ocurra mandarle los datos a cambiar.
-.- 
 
 */
 let $publicacion = document.querySelector(".main-post"), 
@@ -38,7 +37,7 @@ const crud = (metodos) => {
     request.addEventListener("readystatechange", event => {
         //Validacion de estado de petición 0 - 4 
         if (request.readyState !== 4) return;
-
+        //Validacion del estado de respuesta sea un 200 
         if (request.status >=200 && request.status < 300){
             let json = JSON.parse(request.responseText);
             succes(json);
