@@ -22,6 +22,8 @@ li {
 
 .main {
   margin-top: 100px;
+  margin-left: 5px;
+  margin-right: 0px;
 }
 
 .filter-buttons-container {
@@ -798,7 +800,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   color: black;
-  padding-left: 15px;
   font-size: 0.875rem;
 }
 
@@ -1058,7 +1059,7 @@ textarea#contenido-post {
 
 .card-rightbar {
   border-top: 2rem solid  #0000e0;
-  width: 20rem;
+  width: 32vh;
   border-radius: 0.375rem;
 }
 
@@ -1079,6 +1080,12 @@ textarea#contenido-post {
   border-radius: 50%;
 }
 
+.usser {
+  font-weight: 700;
+  color: #323da3;
+  font-size: 1rem;
+}
+
 .overlay-author {
   position: absolute;
   -ms-flex-negative: 0;
@@ -1096,7 +1103,7 @@ textarea#contenido-post {
   text-align: center;
   padding: 8px 14px;
   border-radius: 5px;
-  width: 280px;
+  width: 28vh;
   border: transparent;
   font-weight: 500;
 }
@@ -1221,7 +1228,7 @@ textarea#contenido-post {
 }
 
 @media (max-width: 967px) {
-  .rightbar {
+  .post-rightbar {
     display: none;
   }
 }
