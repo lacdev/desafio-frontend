@@ -115,7 +115,7 @@ const filterByMonth = (array) => {
     let arrayToFilter = [...array]
 
     let currentYear = new Date().getFullYear()
-    let currentMonth = new Date().getMonth()
+    let currentMonth = new Date().getMonth() + 1
     let currentYearAndMonth = `${currentYear}-${currentMonth}`
 
     const filteredArray = arrayToFilter.filter((post) => {
