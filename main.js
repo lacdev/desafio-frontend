@@ -21,30 +21,19 @@ console.log("Desafio Frontend Js14")
 // }
 
 /* 
-
 Form:
-
 en los inputs del form
-
 un event listener y cuando de click o create post
-
 los input.value de cada cuadrito.
-
 van a rellenar el objeto dinamicante por ejemplo.
-
 const author = querySelector("#author")
-
 author.addEventlistener("input", () => {
-
 })
-
 Al momento de darle a agregar post
-
 const post = {
     name: ${author.value} = al valor actual de ese input,
     title: ${title.value} 
 }
-
 */
 
 // Crear post prueba
