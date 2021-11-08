@@ -5,7 +5,7 @@
 .filter-buttons-container {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 8px;
 }
@@ -17,6 +17,7 @@
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.2s ease-in;
 }
 
 .main-filter-button:hover {

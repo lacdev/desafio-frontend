@@ -29,9 +29,9 @@ li {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -45,6 +45,8 @@ li {
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .main-filter-button:hover {
@@ -1218,7 +1220,8 @@ body {
 }
 
 .tag {
-  height: 30px;
+  height: 40px;
+  padding: 10px 20px;
 }
 
 .tag:hover {
