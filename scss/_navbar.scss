@@ -11,6 +11,10 @@ header {
   align-items: center;
 }
 
+.left-nav-container {
+  display: flex;
+}
+
 .left-nav-elements {
   display: flex;
   align-items: center;
@@ -88,6 +92,7 @@ header {
   justify-content: center;
   align-items: center;
   transition-duration: 0.2s ease-in;
+  margin-right: 8px;
 }
 
 .hamburguer-menu-container:hover {
