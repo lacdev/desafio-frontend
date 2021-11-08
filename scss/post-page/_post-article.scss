@@ -116,11 +116,23 @@
 
 }
 
-.cover-image-url {
+input#imagen-url {
+    border: none;
+    margin-left: 30px;
+    margin-bottom: 5px;
+    width: -webkit-fill-available;
+}
+   #title-post { 
+  font-size: 40px;
+  font-weight: bolder;
   border: none;
   margin-left: 30px;
-  margin-bottom: 5px;
-} 
+  width: -webkit-fill-available;
+}
+textarea#contenido-post {
+  border: none;
+  font-size: 25px;
+}
 
 .autor {
   align-self: flex-start;

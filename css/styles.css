@@ -952,6 +952,26 @@ header {
   width: -webkit-fill-available;
 }
 
+input#imagen-url {
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  width: -webkit-fill-available;
+}
+
+#title-post {
+  font-size: 40px;
+  font-weight: bolder;
+  border: none;
+  margin-left: 30px;
+  width: -webkit-fill-available;
+}
+
+textarea#contenido-post {
+  border: none;
+  font-size: 25px;
+}
+
 .autor {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -1025,6 +1045,10 @@ header {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
   padding: 0px 10px 10px 0px;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%;
 }
 
 .post-rightbar {
