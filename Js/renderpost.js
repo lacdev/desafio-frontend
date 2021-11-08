@@ -57,9 +57,10 @@ const crud = (metodos) => {
 
 //Iniciar a crear el la carga para imprimir los elementos obtenidos de la DB
 const getPost = () => {
-    let idfake = "-MniCCuY7Hro49xVMH-M";
+    const postId = urlparameter("id")
+    //let idfake = "-MniCCuY7Hro49xVMH-M";
    crud({
-        url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${idfake}.json`,
+        url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${postId}.json`,
         succes:(respuesta) => { 
             renderPost(respuesta) 
          },
@@ -70,7 +71,8 @@ const getPost = () => {
     })
 }
 
-//Función de lo que cada selector de arriba tomara de la bd
+//Función de lo que cada selector de cada elemento de html se tomara de la bd
+//Respuesta .- Indica cada elemento de la bd se a igual al selector de cada querySelector por clase. 
 const renderPost = (respuesta) => {
 
     $autor.textContent = respuesta.name
@@ -78,17 +80,21 @@ const renderPost = (respuesta) => {
     $titulo.textContent = respuesta.title
     $contenido.textContent = respuesta.contenido
     $imagen.src = respuesta.imageURL
-
+   
+    //Los tags serán insertados en el html siendo leidos como cadena
+    //
     $tags.innerHTML = "";
-
-    respuesta.tags.forEach((tag) => {
+    const children = $tags.respuesta.childNodes;
+      console.log(children);
+    children.forEach((tag) => {
         const pTag = document.createElement("p");
             pTag.classList.add("tag");
             pTag.textContent = tag;
             $tags.appendChild(pTag);
+    
     })
-
-    document.querySelector("#exampleModal").modal("hide");
+    
+    //document.querySelector("#exampleModal").modal("hide");
 }
 
 
@@ -100,7 +106,7 @@ document.addEventListener("DOMContentLoaded", getPost);
 4. Guardar los cambios. 
 
 */
-const putPost = () => {
+/*const putPost = () => {
     let idfake = "-MniCq-1zu_afiH_LwPg";
     crud({
         url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${idfake}.json`,
@@ -133,36 +139,28 @@ document.getElementById("salvar").addEventListener("click", event => {
     let $imagen = document.querySelector("#imagen-url").value;
     let $titulo = document.querySelector("#title-post").value;
     let  date = new Date();
-    let $fecha = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-    console.log("🚀 ~ file: renderpost.js ~ line 131 ~ document.getElementById ~ $contenido", $contenido)
+    let $fecha = `${date.getFullYear()}-${date.getMonth() +1 }-${date.getDate()}`;
+   // console.log("🚀 ~ file: renderpost.js ~ line 131 ~ document.getElementById ~ $contenido", $contenido)
     const postId = urlparameter("id")
     crud ({
         url:`https://desafio-js-fa573-default-rtdb.firebaseio.com/${postId}.json`,
         method: "PUT",
-        succes: (respuesta) => { renderPost ({name: $autor.textContent,
-            title: $titulo,
-           imageURL: $imagen,
-          contenido: $contenido,
-           fecha: $fecha,
-            tags: [
-               "React",
-               "Javascript",
-                "Code Quality",
-               "Components"
-               ] })},
-        error: (err) => $form.insertAdjacentHTML("afterend, <p><b>${err}</b></p>"),
-        data: {
+        succes: (respuesta) => { renderPost ({ 
             name: $autor.textContent,
             title: $titulo,
            imageURL: $imagen,
           contenido: $contenido,
            fecha: $fecha,
-            tags: [
-               "React",
-               "Javascript",
-                "Code Quality",
-               "Components"
-               ]
+            tags: $tags 
+        })},
+        error: (err) => $form.insertAdjacentHTML("afterend, <p><b>${err}</b></p>"),
+        data: {   
+            name: $autor.textContent,
+            title: $titulo,
+           imageURL: $imagen,
+          contenido: $contenido,
+           fecha: $fecha,
+            tags: $tags
             }
         })
 

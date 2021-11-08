@@ -115,6 +115,13 @@
   width: -webkit-fill-available;
 
 }
+
+.cover-image-url {
+  border: none;
+  margin-left: 30px;
+  margin-bottom: 5px;
+} 
+
 .autor {
   align-self: flex-start;
   margin: 20px 0 0px 50px;
@@ -174,4 +181,6 @@
   padding: 0px 10px 10px 0px;
 }
   
-  
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%;
+}
