@@ -43,12 +43,15 @@
             <div class="form-container">
 
               <form action="">
-
-                <input type="text" class="search-form" id="search" placeholder="Search..." />
-                 <a href="#"><button class="input-button" type="submit">
-                   <img src="../images/iconmonstr-search-thin.svg" alt="" />
-                </button></a>
-
+  
+                <input type="text" class="search-form" id="search-bar" placeholder="Search..." />
+                <div class="input-button">
+                  <a href="./search_page.html" id="searchButton">
+                    <img src="../images/iconmonstr-search-thin.svg" alt="" />
+                  </a>
+                </div>
+               
+  
               </form>
         
           </div>
@@ -554,12 +557,12 @@
                <p class="contenido-post">El super contenido del post</p>
               </div>
              <div class="button-container">
-             <button type= "button" class="button-editar" id="modificar" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
+             <button type= "button" class="button-editar" id="modificar" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Editar</button>
              <input type="hidden" name="id">
             </div>
              <!-- ----------------------------- </template> ----------------------------- -->
-             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
+             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Corrección de post</h5>
@@ -568,16 +571,16 @@
                   <div class="modal-body">
                     <form class="crud-form">
                       <div class="form-group">
-                      <label for="imagen-url">Agrega Imagen</label>
+                      <!-- ------------ <label for="imagen-url">Agrega Imagen</label> ------------ -->
                        <input type="text" name="fondoimagen" class="cover-image-url" id="imagen-url" placeholder="Agrega un enlace de imagen">
                       </div>
                       <div class="form-group">
-                       <label for="title-post">Titulo</label>
+                       <!-- --------------- <label for="title-post">Titulo</label> ---------------- -->
                        <input type="text" name="titulopost" class="new-title" id="title-post" placeholder="Agrega un titulo">
                       </div>
                       <div class="form-group">
-                        <label for="contenido-post">Información</label>
-                        <textarea class="form-control" name="info" id="contenido-post" rows="3"></textarea>
+                        <!-- ----------- <label for="contenido-post">Información</label> ----------- -->
+                        <textarea class="form-control" name="info" id="contenido-post" rows="3" placeholder="Escribe la redacción de tu post"></textarea>
                       </div>
                       </form>
                   </div>
