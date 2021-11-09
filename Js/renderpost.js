@@ -39,6 +39,7 @@ const crud = (metodos) => {
         if (request.readyState !== 4) return;
         //Validacion del estado de respuesta sea un 200 
         if (request.status >=200 && request.status < 300){
+            //Tomar el objeto que se va enviar tipo json a objeto JavaScript
             let json = JSON.parse(request.responseText);
             succes(json);
 
@@ -50,6 +51,7 @@ const crud = (metodos) => {
 
     request.open(method ||'GET', url);
     request.setRequestHeader("Content-type", "application/json; chartset=utf-8");
+    //Devolver el objeto de JavaScript al objeto json correspondiente
     request.send(JSON.stringify(data));
   }
 
