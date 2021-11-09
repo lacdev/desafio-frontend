@@ -152,6 +152,12 @@ header {
           align-items: center;
 }
 
+.left-nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .left-nav-elements {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -250,6 +256,7 @@ header {
           align-items: center;
   -webkit-transition-duration: 0.2s ease-in;
           transition-duration: 0.2s ease-in;
+  margin-right: 8px;
 }
 
 .hamburguer-menu-container:hover {
@@ -468,7 +475,7 @@ header {
   text-decoration: none;
   color: black;
   text-align: left;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -479,14 +486,25 @@ header {
 .card .tags-container {
   color: gray;
   text-align: left;
-  padding: 8px 32px;
+  font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 8px;
 }
 
 .card .tags-container .tag {
-  margin: 0 8px;
+  padding: 16px;
 }
 
 .card .delete-post {
@@ -496,7 +514,8 @@ header {
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding: 8px 16px;
-  margin: 16px 32px 16px 0px;
+  margin: 16px;
+  font-weight: 600;
 }
 
 .card .post-body {
@@ -1353,3 +1372,4 @@ footer .btn {
     font-size: 0.6em;
   }
 }
+/*# sourceMappingURL=styles.css.map */

@@ -2,11 +2,8 @@ console.log("Filtering Posts Js")
 
 const filterButtonsContainer = document.querySelector(".filter-buttons-container")
 
-console.log(filterButtonsContainer)
-
 filterButtonsContainer.addEventListener('click', (event) => {
-    console.log(event.target.id)
-    console.log(articles)
+
     if (event.target.id === "feed-button") {
         filterByFeed()
     }
@@ -60,7 +57,6 @@ const filterByNewest = (array) => {
         }
     
         return 0
-
     })
 
     sortedByNewest.forEach((post) => {
@@ -85,7 +81,6 @@ const filterByOldest = (array) => {
         }
     
         return 0
-
     })
 
     sortedByOldest.forEach((post) => {
@@ -126,3 +121,16 @@ const filterByMonth = (array) => {
         renderPost(post[1], post[0])
     })
 }
+
+
+//convertir fecha a enteros
+        //    postArray[0][1].fecha
+        //    '2021-10-5'
+        //Cuando haga mi sort, hago forEach en ese nuevo array y Borrar el dom antes y renderizar Posts again. 
+
+       //Iterating with objects from JSON
+
+        // for (let key in posts) {
+        //     console.log(key)
+        //     renderPost(posts[key], key)
+        // }
