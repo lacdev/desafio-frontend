@@ -21,7 +21,7 @@ const content = document.getElementById("post-content");
 
 upload.addEventListener('click', send => {
     const date = new Date();
-    const fecha = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    const fecha = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
     console.log(fecha)
     const post = {
         name: nameTag.value,
