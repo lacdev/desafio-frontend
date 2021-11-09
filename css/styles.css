@@ -1323,12 +1323,6 @@ footer .btn {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .post-leftbar {
-    display: none;
-  }
-}
-
 @media (min-width: 320px) and (max-width: 754px) {
   .profile {
     padding: 0 20px;

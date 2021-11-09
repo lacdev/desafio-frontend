@@ -27,6 +27,7 @@
   .col-1.post-leftbar.d-flex.justify-content-center {
     display: none!important;
    }
+
 }
 
 @media (min-width: 750px) {
@@ -53,13 +54,6 @@
   
 }
 
-@media screen and (max-width: 767px) {
-  
-  .post-leftbar{
-    display: none;
-  }
-  
-}
 
 
 //Media queries Daniel
