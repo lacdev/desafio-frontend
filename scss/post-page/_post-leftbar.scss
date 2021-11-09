@@ -2,3 +2,12 @@
   min-height: 400px;
   background-color: transparent;
 }
+
+.reactions{
+  display: flex;
+    justify-items: center;
+    align-items: center;
+    color: black;
+    padding-left: 15px;
+    font-size: 0.875rem;
+}

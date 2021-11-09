@@ -83,6 +83,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
+  font-size: 1.125rem;
 }
 
 .post-body-paragraph {
@@ -108,4 +109,90 @@
 .post-body-subtitle {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.imageurl{
+  width: -webkit-fill-available;
+
+}
+
+input#imagen-url {
+    border: none;
+    margin-left: 30px;
+    margin-bottom: 5px;
+    width: -webkit-fill-available;
+}
+   #title-post { 
+  font-size: 40px;
+  font-weight: bolder;
+  border: none;
+  margin-left: 30px;
+  width: -webkit-fill-available;
+}
+textarea#contenido-post {
+  border: none;
+  font-size: 25px;
+}
+
+.autor {
+  align-self: flex-start;
+  margin: 20px 0 0px 50px;
+  align-items: center;
+  justify-content: space-around;
+ font-weight: bold;
+}
+
+.fecha {
+  align-self: flex-start;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-left: 50px;
+    color: #717171;
+
+}
+.titulo {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 0.75rem;
+
+}
+
+.contenido-post {
+  word-break: break-all;
+}
+
+.button-editar{
+    background-color: $secondary-color;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px 14px;
+    border-radius:5px;
+    font-weight: 500;
+    margin-right: 8px;
+    border:transparent;
+
+    
+  }
+  .button-editar:hover {
+    color: white;
+    background-color: $bannerBackground;
+    text-decoration: none;
+  }
+.button-container{
+  display: flex;
+    direction: revert;
+    flex-direction: row-reverse;
+  padding: 0px 10px 10px 0px;
+}
+  
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%;
 }
