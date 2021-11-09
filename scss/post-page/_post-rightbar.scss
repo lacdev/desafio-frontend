@@ -5,7 +5,7 @@
 
 .card-rightbar {
   border-top: 2rem solid  #0000e0;
-  width: 20rem;
+  width: 32vh;
   border-radius: 0.375rem;
 }
 
@@ -26,6 +26,12 @@
   }
 }
 
+.usser {
+  font-weight: 700;
+  color: #323da3;
+  font-size: 1rem;
+}
+
 .overlay-author {
   position: absolute;
   flex-shrink: 0;
@@ -42,7 +48,7 @@
     text-align: center;
     padding: 8px 14px;
     border-radius:5px;
-    width: 280px;
+    width: 28vh;
     border:transparent;
     font-weight: 500;
 }
