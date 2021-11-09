@@ -7,6 +7,24 @@ const boton = document.querySelector('#searchButton');
 // const resultado = document.querySelector('#postContainer')
 
 
+// funcion al cargar la pagina
+window.addEventListener('load', (event) => {
+    //console.log('page is fully loaded');
+   
+   getPosts()
+   //console.log(search);
+  });
+
+
+  // obtener el valor del parametro en URL
+  const urlparameter =  (paramName) => {
+    const params = window.location.search; 
+    const urlParams = new URLSearchParams(params);
+   const param = urlParams.get(paramName);
+   
+   return param;
+  }
+
 const articles = document.querySelector("#postContainer")
 
 let postArray = []
@@ -72,15 +90,18 @@ function renderPost (post, key) {
 
 
 
-const filtrar = () => {
-   
+const filtrar = (inicialValue = '') => {
+
     articles.innerHTML ='';
-   
-    const texto = formulario.value.toLowerCase();
+
+   let texto = inicialValue !== '' ? inicialValue : formulario.value.toLowerCase();
+   console.log(texto)
+    //const texto = formulario.value.toLowerCase();
     
     console.log(texto)
     //textSearch.innerHTML = `<li>Search results for ${texto}</li>`;
     
+    console.log(postList)
     for(let post in postList){
         //console.log(postList[post]) 
         let titulo = postList[post].title.toLowerCase();
@@ -113,26 +134,72 @@ const filtrar = () => {
 
 
 function getPosts () {
-    const request = new XMLHttpRequest()
-    const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
+    // const request = new XMLHttpRequest()
+    // const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
 
-    request.responseType = 'json'
-    request.responseText = 'text' //Da string
-    request.open('GET', URL)
-    request.send()
-    console.log(request)
+    // request.responseType = 'json'
+    // request.responseText = 'text' //Da string
+    // request.open('GET', URL)
+    // request.send()
+    // console.log(request)
 
-    request.onload = function() {
-        postList = request.response; 
-        //JSON convertido a objeto
-       // console.log(posts)
-    }
+    // request.onload = function() {
+    //     postList = request.response; 
+    //     //JSON convertido a objeto
+    //    // console.log(posts)
+    // }
+    crud ({
+        url:"https://desafio-js-fa573-default-rtdb.firebaseio.com/.json",
+        method: "GET",
+        succes: (respuesta) => {
+            postList = respuesta
+            const search = urlparameter('search')
+            filtrar(search)
+        }, 
+        error: (err) => $form.insertAdjacentHTML("afterend, <p><b>${err}</b></p>"),
+        // data: {   
+        //     name: $autor.textContent,
+        //     title: $titulo,
+        //    imageURL: $imagen,
+        //   contenido: $contenido,
+        //    fecha: $fecha,
+        //    tags: $tags
+        //     }
+        })
+
 }
 
 boton.addEventListener('click', event =>{
     event.preventDefault()
     filtrar()
 }) 
-getPosts()
 
+const crud = (metodos) => {
+    //Destructuración para el objeto 
+    /* Url - para llamar a la db 
+    method  - para llamar a (get,post,put o delete)
+    sucess y error - identificar el estado de respuesta (200 - 400)
+    data - para saber si se envia datos o no
+    */
+    let { url, method, succes, error, data } = metodos;
+    const request = new XMLHttpRequest();
+
+    request.addEventListener("readystatechange", event => {
+        //Validacion de estado de petición 0 - 4 
+        if (request.readyState !== 4) return;
+        //Validacion del estado de respuesta sea un 200 
+        if (request.status >=200 && request.status < 300){
+            let json = JSON.parse(request.responseText);
+            succes(json);
+
+        } else {
+         let message = request.statusText || "Ocurrio un error";
+         error(`Error ${request.status}: ${message}`);
+        }
+    });
+
+    request.open(method ||'GET', url);
+    request.setRequestHeader("Content-type", "application/json; chartset=utf-8");
+    request.send(JSON.stringify(data));
+  }
  

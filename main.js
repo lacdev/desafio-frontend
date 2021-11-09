@@ -1,4 +1,5 @@
 console.log("Desafio Frontend Js14")
+const SearchButton = document.querySelector('#searchButton');
 
 //Pruebas de funciones GET,POST,PUT,DELETE en Firebase.
 
@@ -72,6 +73,17 @@ function createPost (post) {
     console.log(request)
 
 }
+
+SearchButton.addEventListener('click', (event) =>{
+    event.preventDefault();
+    const formulario = document.querySelector('#search-bar');
+    if(formulario.value == ''){
+        return
+    }
+   window.location.href = `./pages/search_page.html?search=${formulario.value} `
+})
+
+
 
 //Cuando el usuario de click a delete
 
