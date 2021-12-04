@@ -59,7 +59,6 @@ function renderPost(post) {
   deleteButton.textContent = 'Eliminar Post'
   deleteButton.addEventListener('click', (event) => {
     event.preventDefault()
-    console.log(event.target.id)
     const cardElement = event.target.closest('.card')
     deletePostsFetch(event.target.id)
     deletefromDOM(cardElement)
