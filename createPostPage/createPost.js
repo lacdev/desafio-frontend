@@ -12,6 +12,12 @@
 //     ]
 // }
 
+const PORT = 5000
+const DB_USER = 'german'
+const DB_PASSWORD = 'test123'
+const DB_HOST = 'cluster0.xftq5.mongodb.net'
+const DB_NAME = 'desafio'
+
 const upload = document.getElementById("upload");
 const title = document.getElementById("new-title");
 const nameTag = document.getElementById("name-tag");
@@ -26,13 +32,13 @@ upload.addEventListener('click', send => {
     const post = {
         name: nameTag.value,
         title: title.value,
-        fecha: fecha,
+        date: fecha,
         imageURL: imageURL.value,
-        contenido: content.value,
+        content: content.value,
         tags: tagValue().split(", ")
     }
 
-    createPost(post);
+    savePost(post);
 });
 
 function tagValue(){
@@ -43,20 +49,38 @@ function tagValue(){
     return tagValues[0].innerText
 }
 
+const savePost = ((post)=> {
+    const url = 'http://localhost:5000/posts'
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(post),
+      }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
+})
 
-function createPost (post) {
-    const request = new XMLHttpRequest()
-    const URL = "https://desafio-js-fa573-default-rtdb.firebaseio.com/.json"
+// const savePost = (post) => {
+//     const url = 'http://localhost:5000/posts'
+//     fetch(url, {method: 'POST', body: JSON.stringify(post)})
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
+//     .catch((error) => console.log(error))
+// }
 
-    //Requerido para debuggear estado de peticion.
-    request.addEventListener("readystatechange", () => {
-        if (request.readyState === 200) {
-            console.log(request.responseText)
-        }  else {
-            console.log(request.readyState)
-        }
-    })
-    request.open('POST', URL, true)
-    request.send(JSON.stringify(post))
-    console.log(request)
-}
+
+// function createPost (post) {
+//     const request = new XMLHttpRequest()
+//     const URL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`
+
+//     //Requerido para debuggear estado de peticion.
+//     request.addEventListener("readystatechange", () => {
+//         if (request.readyState === 200) {
+//             console.log(request.responseText)
+//         }  else {
+//             console.log(request.readyState)
+//         }
+//     })
+//     request.open('POST', URL, true)
+//     request.send(JSON.stringify(post))
+//     console.log(request)
+// }
