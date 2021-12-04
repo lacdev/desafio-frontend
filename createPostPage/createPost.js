@@ -12,11 +12,6 @@
 //     ]
 // }
 
-const PORT = 5000
-const DB_USER = 'german'
-const DB_PASSWORD = 'test123'
-const DB_HOST = 'cluster0.xftq5.mongodb.net'
-const DB_NAME = 'desafio'
 
 const upload = document.getElementById("upload");
 const title = document.getElementById("new-title");
